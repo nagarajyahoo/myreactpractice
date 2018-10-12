@@ -1,6 +1,7 @@
 import React from 'react';
 import grid from '../../resources/vendor/css/grid.css'
 import classes from './Feedback.css'
+import common from '../../index.css'
 
 const feedback = (props) => {
     return (
@@ -55,7 +56,7 @@ const feedback = (props) => {
             <div className={grid.row}>
                 <div className={[grid.col, grid["span-1-of-3"], classes.labels].join(' ')}>&nbsp;</div>
                 <div className={[grid.col, grid["span-2-of-3"], classes.userinputs].join(' ')}>
-                    <button>Send it!</button>
+                    <button className={common.selected}>Send it!</button>
                 </div>
             </div>
         </section>

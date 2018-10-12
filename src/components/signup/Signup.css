@@ -1,0 +1,62 @@
+.sectionplans {
+    padding-top: 20px;
+    background-color: #f4f4f4;
+}
+
+.planbox {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: 0 2px 2px #efefef;
+}
+
+.planbox div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.planbox div:first-child {
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.planbox div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+
+.planprice {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+
+.planprice span {
+    font-size: 30%;
+    font-weight: 300;
+}
+
+planpricemeal {
+    font-size: 80%;
+}
+.listpoints {
+    text-align: justify;
+    font-size: 120%;
+}
+
+.listpoints i {
+    margin-right: 10px;
+    color: #e67e22;
+}
+
+.planbox ul {
+    list-style: none;
+}
+
+.planbox ul li {
+    padding: 5px 0;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classes from './NavigationItems.css'
+import {Link} from "react-router-dom";
 
 class NavigationItems extends Component {
     state = {
@@ -8,47 +9,50 @@ class NavigationItems extends Component {
                 id: 1,
                 name: 'Food Delivery',
                 class: 'active',
+                url: '/fooddelivery'
             }, {
                 id: 2,
                 name: 'How It Works',
                 class: null,
+                url: '/howitworks'
             }, {
                 id: 3,
                 name: 'Our Cities',
                 class: null,
+                url: '/cities'
             }, {
                 id: 4,
                 name: 'Sign Up',
                 class: null,
+                url: '/signup'
             }
         ]
     };
 
-    updateClass = (id) => {
+    getSelectedLinkId = () => {
         const linksCopy = Object.assign(this.state.links);
+        let id = 1;
         linksCopy.map(navItem => {
-            if (navItem.id === id) {
-                navItem.class = 'active';
+            if (window.location.href.endsWith(navItem.url)) {
+                id = navItem.id;
             }
-            else {
-                navItem.class = null;
-            }
-            return navItem;
+            return id;
         });
-
-        this.setState({
-           links: linksCopy
-        });
+        return id;
     };
 
     render() {
+        const id = this.getSelectedLinkId();
+        console.log('render ', id);
+
         return (
             <div className={classes.links}>
                 <ul>
                     {this.state.links.map(navItem => {
                         return <li key={navItem.id}
-                                   className={navItem.class === 'active' ? classes.active : null}
-                                   onClick={() => this.updateClass(navItem.id)}><a href="/">{navItem.name}</a></li>
+                                   className={navItem.id === id ? classes.active : null}>
+                            <Link to={navItem.url}>{navItem.name}</Link>
+                        </li>
                     })}
                 </ul>
             </div>

@@ -58,12 +58,26 @@ h3 {
 button {
     border: 1px solid transparent;
     border-radius: 100px;
-    background-color: #e67e22;
-    color: white;
     height: 40px;
     width: auto;
     padding: 10px 30px;
     font-size: 100%;
+}
+
+button.normal {
+    background-color: #E69F19;
+    color: white;
+}
+
+button.selected {
+    background-color: #e67e22;
+    color: white;
+}
+
+button.ghost {
+    border: 1px solid #e67e22;
+    background-color: #f3f3f3;
+    color: #e67e22;
 }
 
 button:hover {

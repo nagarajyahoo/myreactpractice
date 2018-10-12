@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import grid from '../../resources/vendor/css/grid.css';
 import classes from './Header.css'
 import NavigationItems from "../../components/navigation/navigationitems/NavigationItems";
-import logo from '../../resources/img/logo.png'
+import logo from '../../resources/img/logo-white.png'
+import {Link} from "react-router-dom";
 
 class HeaderContents extends Component {
 
@@ -12,15 +13,11 @@ class HeaderContents extends Component {
                 <nav>
                     <div className={grid.row}>
                         <div className={[grid.col, grid['span-2-of-12'], classes.logo].join(' ')}>
-                            <a href='/'><img src={logo} alt='Logo'/></a>
+                            <Link to='/'><img src={logo} alt='Logo'/></Link>
                         </div>
                         <div className={[grid.col, grid['span-10-of-12']].join(' ')}>
                             <NavigationItems/>
                         </div>
-                        {/*<div className={[grid.col, grid['span-1-of-12'], classes.search].join(' ')}>*/}
-                            {/*<input type='text' placeholder='Search...'/>*/}
-                            {/*<button>..</button>*/}
-                        {/*</div>*/}
                     </div>
                 </nav>
             </header>

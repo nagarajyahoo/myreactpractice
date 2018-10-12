@@ -18,64 +18,64 @@ const cities = (props) => {
                   <img src={berlin} alt='Berlin'/>
                   <h3>Berlin</h3>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}/>
                       1600+ happy eaters
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}/>
                       60+ top chefs
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}></i>
-                      <a href="#">@omnifood_lx</a>
+                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}/>
+                      <a href="/">@omnifood_lx</a>
                   </div>
               </div>
               <div className={[grid.col, grid["span-1-of-4"], classes.city].join(' ')}>
                   <img src={lisbon} alt='Berlin'/>
                   <h3>Lisbon</h3>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}/>
                       1600+ happy eaters
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}/>
                       60+ top chefs
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}></i>
-                      <a href="#">@omnifood_lx</a>
+                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}/>
+                      <a href="/">@omnifood_lx</a>
                   </div>
               </div>
               <div className={[grid.col, grid["span-1-of-4"], classes.city].join(' ')}>
                   <img src={sanfransisco} alt='Berlin'/>
                   <h3>San Fransisco</h3>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}/>
                       1600+ happy eaters
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}/>
                       60+ top chefs
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}></i>
-                      <a href="#">@omnifood_lx</a>
+                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}/>
+                      <a href="/">@omnifood_lx</a>
                   </div>
               </div>
               <div className={[grid.col, grid["span-1-of-4"], classes.city].join(' ')}>
                   <img src={london} alt='Berlin'/>
                   <h3>London</h3>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-person"], classes.smallicon].join(' ')}/>
                       1600+ happy eaters
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}></i>
+                      <i className={[icons["ion-ios-star"], classes.smallicon].join(' ')}/>
                       60+ top chefs
                   </div>
                   <div className={classes.cityfeature}>
-                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}></i>
-                      <a href="#">@omnifood_lx</a>
+                      <i className={[icons["ion-social-twitter"], classes.smallicon].join(' ')}/>
+                      <a href="/">@omnifood_lx</a>
                   </div>
               </div>
           </div>

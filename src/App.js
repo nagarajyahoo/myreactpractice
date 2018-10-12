@@ -5,17 +5,29 @@ import FoodDelivery from "./components/fooddelivery/FoodDelivery";
 import HowItWorks from "./components/howitworks/HowItWorks";
 import Cities from "./components/cities/Cities";
 import Feedback from "./components/feedback/Feedback";
+import Signup from "./components/signup/Signup";
+
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
     render() {
         return (
-            <div className={classes.App}>
-                <HeaderContents/>
-                {/*<FoodDelivery/>*/}
-                {/*<HowItWorks/>*/}
-                {/*<Cities/>*/}
-                <Feedback/>
-            </div>
+            <BrowserRouter>
+                <div className={classes.App}>
+                    <HeaderContents/>
+                    <div style={{height: '800px'}}>
+                        <Switch>
+                            <Route path='/fooddelivery' component={FoodDelivery}/>
+                            <Route path='/howitworks' component={HowItWorks}/>
+                            <Route path='/cities' component={Cities}/>
+                            <Route path='/feedback' component={Feedback}/>
+                            <Route path='/signup' component={Signup}/>
+                            <Route path='/' component={FoodDelivery}/>
+                        </Switch>
+                    </div>
+                    <HeaderContents/>
+                </div>
+            </BrowserRouter>
         );
     }
 }
