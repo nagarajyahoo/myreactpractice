@@ -1,0 +1,35 @@
+.feedback {
+    margin-top: 10px;
+}
+
+.labels {
+    text-align: justify;
+    padding-left: 20%;
+}
+
+.userinputs {
+    padding-left: 0;
+    float: left;
+}
+
+.userinputs input[type=text],
+.userinputs input[type=email],
+.userinputs textarea,
+.userinputs select {
+    width: 60%;
+    height: 25px;
+    font-size: 15px;
+    float: left;
+}
+
+.userinputs textarea {
+    height: 100px;
+}
+
+.userinputs input[type=checkbox] {
+    float: left;
+}
+
+.userinputs button {
+    float: left;
+}

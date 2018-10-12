@@ -54,3 +54,18 @@ h3 {
     font-size: 110%;
     margin-bottom: 15px;
 }
+
+button {
+    border: 1px solid transparent;
+    border-radius: 100px;
+    background-color: #e67e22;
+    color: white;
+    height: 40px;
+    width: auto;
+    padding: 10px 30px;
+    font-size: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+}
