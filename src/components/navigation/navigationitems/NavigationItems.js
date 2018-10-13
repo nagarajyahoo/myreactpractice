@@ -20,11 +20,12 @@ class NavigationItems extends Component {
                 name: 'Our Cities',
                 class: null,
                 url: '/cities'
-            }, {
+            },
+            {
                 id: 4,
-                name: 'Sign Up',
+                name: 'Sign In',
                 class: null,
-                url: '/signup'
+                url: '/signin'
             }
         ]
     };

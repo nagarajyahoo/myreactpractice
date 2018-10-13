@@ -8,6 +8,7 @@ import Feedback from "./components/feedback/Feedback";
 import Signup from "./components/signup/Signup";
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import SignIn from "./components/signin/SignIn";
 
 class App extends Component {
     render() {
@@ -22,10 +23,10 @@ class App extends Component {
                             <Route path='/cities' component={Cities}/>
                             <Route path='/feedback' component={Feedback}/>
                             <Route path='/signup' component={Signup}/>
+                            <Route path='/signin' component={SignIn}/>
                             <Route path='/' component={FoodDelivery}/>
                         </Switch>
                     </div>
-                    <HeaderContents/>
                 </div>
             </BrowserRouter>
         );

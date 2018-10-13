@@ -1,0 +1,41 @@
+.signin {
+    width: 40%;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.signin div {
+    /*margin: 2px 0 0 0;*/
+}
+
+.signin label {
+    text-align: justify;
+    float: right;
+    padding-right: 5%;
+    font-weight: bold;
+}
+
+.signin input[type=email],
+.signin input[type=password]{
+    width: 90%;
+    height: 25px;
+    font-size: 15px;
+    float: left;
+    border: 1px solid lightgray;
+    margin-left: 0;
+    border-radius: 2px;
+    padding-left: 4px;
+}
+
+.signin button {
+   float: left;
+}
+
+.signin a {
+    float: right;
+    margin-right: 25%;
+    margin-top: 10px;
+    color: #e67e22;
+}
