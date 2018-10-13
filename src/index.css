@@ -72,14 +72,20 @@ button.normal {
 button.selected {
     background-color: #e67e22;
     color: white;
+    cursor: pointer;
 }
 
 button.ghost {
     border: 1px solid #e67e22;
     background-color: #f3f3f3;
     color: #e67e22;
+    cursor: pointer;
 }
 
-button:hover {
-    cursor: pointer;
+button.disabled {
+    border: 1px solid #e67e22;
+    background-color: #f3f3f3;
+    color: #e67e22;
+    /*pointer-events: none;*/
+    cursor: not-allowed;
 }
