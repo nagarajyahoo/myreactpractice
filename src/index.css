@@ -89,3 +89,9 @@ button.disabled {
     /*pointer-events: none;*/
     cursor: not-allowed;
 }
+
+.error {
+    color: red;
+    font-size: 80%;
+    font-weight: bold;
+}
