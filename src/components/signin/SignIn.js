@@ -19,10 +19,12 @@ class Signin extends Component {
     login = (event) => {
         event.preventDefault();
 
-        this.props.login(
-            this.state.userEmail,
-            this.state.userPassword
-        )
+        // this.props.login(
+        //     this.state.userEmail,
+        //     this.state.userPassword
+        // )
+
+        this.props.history.push('/howItWorks');
     };
 
     render() {
@@ -31,7 +33,7 @@ class Signin extends Component {
             <Aux>
                 {error}
                 <div className={classes.signin}>
-                    <form>
+                    <form onSubmit={(event) => this.login(event)}>
                         <div className={grid.row}>
                             <div className={[grid.col, grid["span-2-of-8"]].join(" ")}>
                                 <label htmlFor="useremail">Email</label>
@@ -61,8 +63,9 @@ class Signin extends Component {
                             <div className={[grid.col, grid["span-3-of-8"]].join(" ")}>&nbsp;</div>
                             <div className={[grid.col, grid["span-5-of-8"]].join(" ")}>
                                 <button
-                                    className={this.state.enableLogin ? common.selected : common.disabled}
-                                    onClick={(event) => this.login(event)}>Login
+                                    type="submit"
+                                    className={this.state.enableLogin ? common.selected : common.disabled}>
+                                    Login
                                 </button>
                                 <Link to="/signup">New User</Link>
                             </div>
