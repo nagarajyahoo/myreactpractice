@@ -8,9 +8,11 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import AuthReducer from "./model/reducers/AuthReducer";
+import NavigationReducer from "./model/reducers/NavigationReducer";
 
 const rootReducer = combineReducers({
-    auth: AuthReducer
+    auth: AuthReducer,
+    navigation: NavigationReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

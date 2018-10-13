@@ -1,59 +1,61 @@
 import React, {Component} from 'react';
 import classes from './NavigationItems.css'
 import {Link} from "react-router-dom";
+import {connect} from 'react-redux'
+import utils from 'lodash'
+import * as NavigationActions from "../../../model/actions/NavigationActions"
 
 class NavigationItems extends Component {
-    state = {
-        links: [
-            {
-                id: 1,
-                name: 'Food Delivery',
-                class: 'active',
-                url: '/fooddelivery'
-            }, {
-                id: 2,
-                name: 'How It Works',
-                class: null,
-                url: '/howitworks'
-            }, {
-                id: 3,
-                name: 'Our Cities',
-                class: null,
-                url: '/cities'
-            },
-            {
-                id: 4,
-                name: 'Sign In',
-                class: null,
-                url: '/signin'
-            }
-        ]
+    selectedTab = (tabId) => {
+        this.props.selectedTab(tabId);
     };
 
-    getSelectedLinkId = () => {
-        const linksCopy = Object.assign(this.state.links);
-        let id = 1;
-        linksCopy.map(navItem => {
+    getSelectedTabId = () => {
+        let id = this.props.selectedId;
+        this.props.links.map(navItem => {
             if (window.location.href.endsWith(navItem.url)) {
                 id = navItem.id;
             }
             return id;
         });
+
         return id;
     };
 
     render() {
-        const id = this.getSelectedLinkId();
+        const id = this.getSelectedTabId();
         console.log('render ', id);
 
         return (
             <div className={classes.links}>
                 <ul>
-                    {this.state.links.map(navItem => {
-                        return <li key={navItem.id}
-                                   className={navItem.id === id ? classes.active : null}>
-                            <Link to={navItem.url}>{navItem.name}</Link>
-                        </li>
+                    {this.props.links.map(navItem => {
+                        if (navItem.id === 4) {
+                            if (utils.isEmpty(this.props.token)) {
+                                return <li key={navItem.id}
+                                           className={navItem.id === id ? classes.active : null}
+                                           onClick={() => this.selectedTab(navItem.id)}>
+                                    <Link to={navItem.url}>{navItem.name}</Link>
+                                </li>
+                            }
+                        }
+                        else if (navItem.id === 5) {
+                            if (!utils.isEmpty(this.props.token)) {
+                                return <li key={navItem.id}
+                                           className={navItem.id === id ? classes.active : null}
+                                           onClick={() => this.selectedTab(navItem.id)}>
+                                    <Link to={navItem.url}>{navItem.name}</Link>
+                                </li>
+                            }
+                        }
+                        else {
+                            return <li key={navItem.id}
+                                       className={navItem.id === id ? classes.active : null}
+                                       onClick={() => this.selectedTab(navItem.id)}>
+                                <Link to={navItem.url}>{navItem.name}</Link>
+                            </li>
+                        }
+                        return null;
                     })}
                 </ul>
             </div>
@@ -61,4 +63,18 @@ class NavigationItems extends Component {
     }
 }
 
-export default NavigationItems;
+const mapStateToProps = (state) => {
+    return {
+        token: state.auth.token,
+        selectedId: state.navigation.selectedId,
+        links: state.navigation.links
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        selectedTab: (tabId) => dispatch(NavigationActions.tabChanged(tabId))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationItems);

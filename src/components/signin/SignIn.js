@@ -19,20 +19,19 @@ class Signin extends Component {
     login = (event) => {
         event.preventDefault();
 
-        // this.props.login(
-        //     this.state.userEmail,
-        //     this.state.userPassword
-        // )
-
-        this.props.history.push('/howItWorks');
+        this.props.login(
+            this.state.userEmail,
+            this.state.userPassword,
+            this.props
+        )
     };
 
     render() {
         const error = utils.isEmpty(this.props.error) ? null : <div className={common.error}>{this.props.error}</div>;
         return (
             <Aux>
-                {error}
                 <div className={classes.signin}>
+                    {error}
                     <form onSubmit={(event) => this.login(event)}>
                         <div className={grid.row}>
                             <div className={[grid.col, grid["span-2-of-8"]].join(" ")}>
@@ -102,7 +101,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: (email, password) => dispatch(AuthActions.login(email, password))
+        login: (email, password, props) => dispatch(AuthActions.login(email, password, props))
     }
 };
 
