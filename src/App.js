@@ -7,13 +7,14 @@ import Cities from "./components/cities/Cities";
 import Feedback from "./components/feedback/Feedback";
 import Signup from "./components/signup/Signup";
 
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
 import SignIn from "./components/signin/SignIn";
 
 class App extends Component {
     render() {
         return (
             <BrowserRouter>
+
                 <div className={classes.App}>
                     <HeaderContents/>
                     <div style={{height: '800px'}}>
@@ -24,7 +25,7 @@ class App extends Component {
                             <Route path='/feedback' component={Feedback}/>
                             <Route path='/signup' component={Signup}/>
                             <Route path='/signin' component={SignIn}/>
-                            <Route path='/' component={FoodDelivery}/>
+                            <Redirect from="/" to="/fooddelivery"/>
                         </Switch>
                     </div>
                 </div>
