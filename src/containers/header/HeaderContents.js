@@ -13,7 +13,7 @@ class HeaderContents extends Component {
                 <nav>
                     <div className={grid.row}>
                         <div className={[grid.col, grid['span-2-of-12'], classes.logo].join(' ')}>
-                            <Link to='/'><img src={logo} alt='Logo'/></Link>
+                            <Link to='/fooddelivery'><img src={logo} alt='Logo'/></Link>
                         </div>
                         <div className={[grid.col, grid['span-10-of-12']].join(' ')}>
                             <NavigationItems/>
