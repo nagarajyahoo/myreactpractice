@@ -15,7 +15,7 @@ const authReducer = (state = initialState, action) => {
                 processing: true
             };
         case Actions.LOGIN_SUCCESSFUL:
-            localStorage.setItem("token", action.token);
+            localStorage.setItem("token", action.data.idToken);
             return {
                 ...state,
                 processing: false,

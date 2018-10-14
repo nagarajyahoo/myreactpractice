@@ -5,8 +5,10 @@ import utils from 'lodash'
 import {connect} from "react-redux";
 
 class NavigationItems extends Component {
-    state = {
-        loggedIn: utils.isEmpty(localStorage.getItem("token"))
+    signOut = () => {
+        console.log("signing out");
+        localStorage.removeItem("token");
+        this.props.location.push("/signin");
     };
 
     render() {
@@ -16,7 +18,7 @@ class NavigationItems extends Component {
                     <ul>
                         {this.props.links.map(navItem => {
                             if (navItem.id === 4) {
-                                if (this.state.loggedIn) {
+                                if (utils.isEmpty(localStorage.getItem("token"))) {
                                     return <li key={navItem.id}>
                                         <NavLink to={navItem.url}
                                                  activeClassName={classes.active}>{navItem.name}</NavLink>
@@ -24,9 +26,10 @@ class NavigationItems extends Component {
                                 }
                             }
                             else if (navItem.id === 5) {
-                                if (!this.state.loggedIn) {
+                                if (!utils.isEmpty(localStorage.getItem("token"))) {
                                     return <li key={navItem.id}>
                                         <NavLink to={navItem.url}
+                                                 onClick={this.signOut}
                                                  activeClassName={classes.active}>{navItem.name}</NavLink>
                                     </li>
                                 }
